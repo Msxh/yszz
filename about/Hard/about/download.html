@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+	.a{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+</body>
+<script>
+function getPhoneType(){ 
+	var pattern_phone = new RegExp("iphone","i");
+	var pattern_android = new RegExp("android","i");
+	var pattern_zh = new RegExp("zh_cn","i");
+	var pattern_qq = new RegExp("QQ","i");
+	var userAgent = navigator.userAgent.toLowerCase();
+	var isAndroid = pattern_android.test(userAgent);
+	var isIphone = pattern_phone.test(userAgent);
+	var zh=pattern_zh.test(userAgent);
+	var isqq=pattern_qq.test(userAgent);
+	if(isAndroid){
+		if(zh || isqq){
+			window.location.href = "https://play.google.com/store/apps/details?id=com.walnutin.hardsport";
+		}else{
+			// window.location.href = "https://play.google.com/store/apps/details?id=com.hard.ruili";
+			window.location.replace('./download/query_en.html');
+		}
+	}else if(isIphone){ 
+		window.location.href = "https://apps.apple.com/us/app/hard/id1475606673?l=zh&ls=1";
+	}else{
+		var ht='<div id="drcode" disabled="disabled" class="a"><image src="a.png"></image><br/>please scan the qr code and download the Hard APP</div>';
+		document.write(ht);
+	}
+}
+getPhoneType();
+</script>
+</html>

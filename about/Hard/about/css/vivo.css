@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+#showImg img{
+			width: 100%;
+		}
+		#imgs img{
+			padding-top:15px;
+		}
+		#list{
+			margin-left:10%;
+			text-align:center;
+		}
+		#list a{
+			color:#666;
+			text-align:center;
+			font-size:14px;
+			line-height:200%;
+			text-decoration:none;
+		}
+		#list a:hover{
+			color:#F00;
+			font-size:16px;
+		}
+		#guanbi{
+			display:none;
+		}
+		#bigtop{
+			padding-left:15px;
+			padding-right:15px;
+		}
